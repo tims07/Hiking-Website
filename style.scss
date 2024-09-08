@@ -69,6 +69,7 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     background: $c-body;
+
 }
 
 ul {
@@ -244,6 +245,51 @@ img {
 
        @include breakpoint(desktop) {
             padding: 1.2rem 0;
+        }
+    }
+
+    // nav styles
+
+    .nav {
+        background: $c-dark-blue;
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        transition: all 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+
+        @include breakpoint(desktop) {
+            background: none;
+            position: relative;
+            max-height: 100%;
+            top: 0;
+            &__list {
+                width: 100%;
+                display: flex;
+                gap: 7rem;
+
+            }
+
+        }
+        &__item {
+            margin: 2rem 0;
+        }
+        &__link {
+            color: $c-white;
+            font-weight: $fw-medium;
+            transition: all 0.2s ease-in-out;
+
+            @include breakpoint(desktop) {
+                color: $c-dark-blue;
+            }
+        }
+        &.open {
+            max-height: 300px;
         }
     }
 }
