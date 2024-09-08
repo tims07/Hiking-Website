@@ -207,3 +207,43 @@ img {
         }
     }
 }
+
+// header styles
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 2.4rem;
+    z-index: 3;
+    transition: all 0.2s ease-in-out;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__logo {
+        display: flex;
+    }
+    &__nav-trigger {
+        font-size: 4rem;
+        color: $c-dark-blue;
+        cursor: pointer;
+
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }
+    &.active {
+        background: $c-white;
+        transition: all 0.2s ease-in-out;
+        box-shadow: $c-shadow-1;
+
+       @include breakpoint(desktop) {
+            padding: 1.2rem 0;
+        }
+    }
+}
